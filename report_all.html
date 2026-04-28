@@ -368,13 +368,14 @@
   }
 
   /* ── CLASS TABLE ── */
-  .class-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  .class-table { width: 100%; border-collapse: collapse; font-size: 15px; }
   .class-table th {
-    background: #f9fafb; padding: 8px 14px; font-size: 14px; font-weight: 600;
+    background: #f9fafb; padding: 8px 10px; font-size: 12px; font-weight: 600;
     color: var(--lge-muted); text-align: center; border-bottom: 1px solid var(--lge-border);
+    line-height: 1.35; word-break: keep-all;
   }
   .class-table td {
-    padding: 9px 14px; text-align: center; border-bottom: 1px solid #f3f4f6;
+    padding: 9px 10px; text-align: center; border-bottom: 1px solid #f3f4f6;
   }
   .class-table td:first-child { text-align: left; font-weight: 600; }
   .class-table tr:last-child td {
@@ -398,7 +399,7 @@
     padding: 2px 7px; border-radius: 100px; font-family: 'Montserrat', sans-serif;
   }
   .mod-item .mod-label { font-size: 13px; font-weight: 700; color: var(--lge-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
-  .mod-item .mod-name { font-size: 16px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .mod-item .mod-name { font-size: 14px; font-weight: 700; margin-bottom: 10px; line-height: 1.35; min-height: 38px; word-break: keep-all; }
   .mod-item .mod-score { font-family: 'Montserrat', sans-serif; font-size: 29px; font-weight: 800; color: var(--lge-red); }
   .mod-item .mod-score.high { color: var(--lge-green); }
   .mod-item .mod-stages {
@@ -776,7 +777,7 @@
       <div class="kpi-item"><span class="val">2회</span><span class="unit">1+2차수</span></div>
       <div class="kpi-item"><span class="val">1박 2일</span><span class="unit">12시간 과정</span></div>
       <div class="kpi-item"><span class="val">4.82</span><span class="unit">1차 종합 만족도</span></div>
-      <div class="kpi-item"><span class="val">4.78<span style="font-size: 15px;opacity:.5">*</span></span><span class="unit">2차 종합 만족도</span></div>
+      <div class="kpi-item"><span class="val">4.70</span><span class="unit">2차 종합 만족도</span></div>
     </div>
   </div>
 </div>
@@ -788,13 +789,16 @@
       <span class="tab-num">1</span> 교육 개요
     </button>
     <button class="tab-btn" data-tab="tab2">
-      <span class="tab-num">2</span> 설문 결과 &amp; 피드백
+      <span class="tab-num">2</span> 설문 결과
+    </button>
+    <button class="tab-btn" data-tab="tab2b">
+      <span class="tab-num">3</span> 피드백 (VOE)
     </button>
     <button class="tab-btn" data-tab="tab3">
-      <span class="tab-num">3</span> 실습 결과물
+      <span class="tab-num">4</span> 실습 결과물
     </button>
     <button class="tab-btn" data-tab="tab4">
-      <span class="tab-num">4</span> 현장 스케치
+      <span class="tab-num">5</span> 현장 스케치
     </button>
   </nav>
 </div>
@@ -824,7 +828,7 @@
       </div>
       <div class="overview-cell">
         <div class="label">2차 일정</div>
-        <div class="value">4/27(월) ~ 4/28(화) · 178명 <span style="font-size: 13px;color:#9ca3af">*임시</span></div>
+        <div class="value">4/27(월) ~ 4/28(화) · 149명</div>
       </div>
       <div class="overview-cell full">
         <div class="label">프로그램 목표</div>
@@ -882,26 +886,26 @@
   </div>
 
   <div class="total-sat">
-    <div class="total-sat-title">▸ 1 + 2차 통합 종합 만족도</div>
+    <div class="total-sat-title">▸ 1차 · 2차 종합 만족도</div>
     <div class="total-sat-grid">
       <div class="total-sat-item">
-        <div class="s-val">4.80<span class="s-denom">/5.0</span></div>
-        <div class="s-label">전체 만족도 (통합)</div>
+        <div class="s-val">4.82<span class="s-denom">/5.0</span></div>
+        <div class="s-label">1차 전체 만족도</div>
       </div>
       <div class="total-sat-item">
-        <div class="s-val">4.76<span class="s-denom">/5.0</span></div>
-        <div class="s-label">업무 관련성 (통합)</div>
+        <div class="s-val">4.70<span class="s-denom">/5.0</span></div>
+        <div class="s-label">2차 과정 만족도</div>
       </div>
       <div class="total-sat-item">
-        <div class="s-val">4.77<span class="s-denom">/5.0</span></div>
-        <div class="s-label">학습 방법 (통합)</div>
+        <div class="s-val">4.75<span class="s-denom">/5.0</span></div>
+        <div class="s-label">2차 Copilot 활용 및 실습</div>
       </div>
       <div class="total-sat-item">
-        <div class="s-val">4.74<span class="s-denom">/5.0</span></div>
-        <div class="s-label">실무 적용도 (통합)</div>
+        <div class="s-val">4.70<span class="s-denom">/5.0</span></div>
+        <div class="s-label">2차 [JB 워크샵] AX 활용 방안 수립</div>
       </div>
     </div>
-    <p style="font-size: 14px;color:rgba(255,255,255,0.3);margin-top:14px;text-align:right">* 2차 데이터 임시 반영 — 실제 데이터 입력 후 업데이트 필요</p>
+    <p style="font-size: 14px;color:rgba(255,255,255,0.4);margin-top:14px;text-align:right">* 1차 113명 · 2차 149명 응답 기준</p>
   </div>
 
   <div class="card">
@@ -915,12 +919,12 @@
         <div class="metric-row"><span class="m-label">실무 적용도</span><div class="bar-bg"><div class="bar-fill" style="width:95%"></div></div><span class="m-score">4.75</span></div>
       </div>
       <div class="sat-block">
-        <div class="sat-block-title"><span class="badge b2">2차</span> 4/27~28 · 178명 <em style="font-size: 13px;color:#f59e0b;font-style:normal">임시</em></div>
-        <div class="score-big" style="color:#1d4ed8">4.78<span class="denom">/5.0</span></div>
-        <div class="score-label">전체 만족도 <em style="font-style:normal;color:#f59e0b;font-size: 14px">*임시 데이터</em></div>
-        <div class="metric-row"><span class="m-label">업무 관련성</span><div class="bar-bg"><div class="bar-fill blue" style="width:94.8%"></div></div><span class="m-score" style="color:#1d4ed8">4.74</span></div>
-        <div class="metric-row"><span class="m-label">학습 방법</span><div class="bar-bg"><div class="bar-fill blue" style="width:95.2%"></div></div><span class="m-score" style="color:#1d4ed8">4.76</span></div>
-        <div class="metric-row"><span class="m-label">실무 적용도</span><div class="bar-bg"><div class="bar-fill blue" style="width:94.6%"></div></div><span class="m-score" style="color:#1d4ed8">4.73</span></div>
+        <div class="sat-block-title"><span class="badge b2">2차</span> 4/27~28 · 149명</div>
+        <div class="score-big" style="color:#1d4ed8">4.70<span class="denom">/5.0</span></div>
+        <div class="score-label">과정 만족도</div>
+        <div class="metric-row"><span class="m-label">실무 적용도</span><div class="bar-bg"><div class="bar-fill blue" style="width:94.4%"></div></div><span class="m-score" style="color:#1d4ed8">4.72</span></div>
+        <div class="metric-row"><span class="m-label">교육 내용</span><div class="bar-bg"><div class="bar-fill blue" style="width:93%"></div></div><span class="m-score" style="color:#1d4ed8">4.65</span></div>
+        <div class="metric-row"><span class="m-label">교육 방법</span><div class="bar-bg"><div class="bar-fill blue" style="width:92.4%"></div></div><span class="m-score" style="color:#1d4ed8">4.62</span></div>
       </div>
     </div>
     <div class="divider"></div>
@@ -943,18 +947,34 @@
     <p style="font-size: 14px;font-weight:700;color:var(--lge-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">반별 상세 — 2차 (모듈별 만족도)</p>
     <table class="class-table">
       <thead>
-        <tr><th style="text-align:left">구분</th><th>AX 방향성</th><th>엘지니</th><th>엑사원</th><th>제미나이</th></tr>
+        <tr><th style="text-align:left">구분</th><th>응답</th><th>자사 AX 추진 전략 및 방향</th><th>자사 AI Tool_Lgenie</th><th>자사 AI Tool_EXAONE</th><th>Gemini 활용 및 실습</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="c2">1반</span> <span style="font-size: 14px;color:var(--lge-muted)">(201호)</span></td><td>4.84</td><td>4.89</td><td>4.79</td><td>4.95</td></tr>
-        <tr><td><span class="c2">2반</span> <span style="font-size: 14px;color:var(--lge-muted)">(205호)</span></td><td>4.77</td><td>4.77</td><td>4.59</td><td>4.86</td></tr>
-        <tr><td><span class="c2">3반</span> <span style="font-size: 14px;color:var(--lge-muted)">(301호)</span></td><td>4.88</td><td>4.63</td><td>4.75</td><td>4.88</td></tr>
-        <tr><td><span class="c2">4반</span> <span style="font-size: 14px;color:var(--lge-muted)">(302호)</span></td><td>4.47</td><td>4.44</td><td>4.34</td><td>4.75</td></tr>
-        <tr><td><span class="c2">5반</span> <span style="font-size: 14px;color:var(--lge-muted)">(303호)</span></td><td>4.40</td><td>4.15</td><td>4.30</td><td>4.25</td></tr>
-        <tr><td>2차 평균</td><td>4.66</td><td>4.56</td><td>4.54</td><td>4.74</td></tr>
+        <tr><td><span class="c2">1반</span> <span style="font-size: 14px;color:var(--lge-muted)">(201호)</span></td><td>20</td><td>4.85</td><td>4.90</td><td>4.80</td><td>4.95</td></tr>
+        <tr><td><span class="c2">2반</span> <span style="font-size: 14px;color:var(--lge-muted)">(205호)</span></td><td>23</td><td>4.70</td><td>4.70</td><td>4.52</td><td>4.78</td></tr>
+        <tr><td><span class="c2">3반</span> <span style="font-size: 14px;color:var(--lge-muted)">(301호)</span></td><td>25</td><td>4.84</td><td>4.60</td><td>4.68</td><td>4.88</td></tr>
+        <tr><td><span class="c2">4반</span> <span style="font-size: 14px;color:var(--lge-muted)">(302호)</span></td><td>32</td><td>4.47</td><td>4.44</td><td>4.34</td><td>4.75</td></tr>
+        <tr><td><span class="c2">5반</span> <span style="font-size: 14px;color:var(--lge-muted)">(303호)</span></td><td>26</td><td>4.46</td><td>4.12</td><td>4.23</td><td>4.15</td></tr>
+        <tr><td>2차 평균</td><td>126</td><td>4.64</td><td>4.52</td><td>4.49</td><td>4.69</td></tr>
       </tbody>
     </table>
-    <p style="font-size: 14px;color:var(--lge-muted);margin-top:12px;text-align:right">* 2차 종합 만족도 · Copilot · JB 워크샵 점수는 추후 입력 예정</p>
+
+    <div style="height:24px"></div>
+    <p style="font-size: 14px;font-weight:700;color:var(--lge-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">반별 상세 — 2차 (종합 만족도 · Copilot 활용 및 실습 · [JB 워크샵] AX 활용 방안 수립)</p>
+    <table class="class-table">
+      <thead>
+        <tr><th style="text-align:left">구분</th><th>응답</th><th>과정 만족도</th><th>실무 적용도</th><th>교육 내용</th><th>교육 방법</th><th>Copilot 활용 및 실습</th><th>[JB 워크샵] AX 활용 방안 수립</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="c2">1반</span> <span style="font-size: 14px;color:var(--lge-muted)">(201호)</span></td><td>21</td><td>4.71</td><td>4.76</td><td>4.57</td><td>4.62</td><td>4.81</td><td>4.76</td></tr>
+        <tr><td><span class="c2">2반</span> <span style="font-size: 14px;color:var(--lge-muted)">(205호)</span></td><td>8</td><td>4.63</td><td>4.50</td><td>4.50</td><td>4.50</td><td>4.50</td><td>4.50</td></tr>
+        <tr><td><span class="c2">3반</span> <span style="font-size: 14px;color:var(--lge-muted)">(301호)</span></td><td>21</td><td>4.86</td><td>4.90</td><td>4.90</td><td>4.90</td><td>4.81</td><td>4.90</td></tr>
+        <tr><td><span class="c2">4반</span> <span style="font-size: 14px;color:var(--lge-muted)">(302호)</span></td><td>25</td><td>4.92</td><td>4.96</td><td>4.88</td><td>4.84</td><td>4.96</td><td>4.60</td></tr>
+        <tr><td><span class="c2">5반</span> <span style="font-size: 14px;color:var(--lge-muted)">(303호)</span></td><td>30</td><td>4.43</td><td>4.43</td><td>4.37</td><td>4.27</td><td>4.57</td><td>4.67</td></tr>
+        <tr><td>2차 평균</td><td>105</td><td>4.70</td><td>4.72</td><td>4.65</td><td>4.62</td><td>4.75</td><td>4.70</td></tr>
+      </tbody>
+    </table>
+    
   </div>
 
   <div class="card">
@@ -962,156 +982,308 @@
     <div class="module-grid">
       <div class="mod-item">
         <div class="mod-label">M1</div>
-        <div class="mod-name">AX 방향성</div>
+        <div class="mod-name">자사 AX 추진 전략 및 방향</div>
         <div class="mod-score">4.64</div>
         <div class="mod-stages">
           <span class="mod-stage"><span class="tag s1">1차</span><b>4.62</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.66</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.64</b></span>
         </div>
       </div>
       <div class="mod-item">
         <div class="mod-label">M2</div>
-        <div class="mod-name">엘지니</div>
-        <div class="mod-score">4.55</div>
+        <div class="mod-name">자사 AI Tool_Lgenie</div>
+        <div class="mod-score">4.53</div>
         <div class="mod-stages">
           <span class="mod-stage"><span class="tag s1">1차</span><b>4.53</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.56</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.52</b></span>
         </div>
       </div>
       <div class="mod-item">
         <div class="mod-label">M3</div>
-        <div class="mod-name">엑사원</div>
-        <div class="mod-score">4.53</div>
+        <div class="mod-name">자사 AI Tool_EXAONE</div>
+        <div class="mod-score">4.50</div>
         <div class="mod-stages">
           <span class="mod-stage"><span class="tag s1">1차</span><b>4.51</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.54</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.49</b></span>
         </div>
       </div>
       <div class="mod-item">
         <div class="mod-label">M4</div>
-        <div class="mod-name">제미나이</div>
-        <div class="mod-score">4.64</div>
+        <div class="mod-name">Gemini 활용 및 실습</div>
+        <div class="mod-score">4.61</div>
         <div class="mod-stages">
           <span class="mod-stage"><span class="tag s1">1차</span><b>4.53</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.74</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.69</b></span>
         </div>
       </div>
-      <div class="mod-item">
+      <div class="mod-item best">
         <div class="mod-label">M5</div>
-        <div class="mod-name">Copilot</div>
-        <div class="mod-score">4.81</div>
+        <div class="mod-name">Copilot 활용 및 실습</div>
+        <div class="mod-score high">4.78</div>
         <div class="mod-stages">
           <span class="mod-stage"><span class="tag s1">1차</span><b>4.81</b></span>
-          <span class="mod-stage pending"><span class="tag s2">2차</span><b>입력 대기</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.75</b></span>
         </div>
       </div>
       <div class="mod-item">
         <div class="mod-label">M6</div>
-        <div class="mod-name">JB 워크샵</div>
-        <div class="mod-score">4.73</div>
+        <div class="mod-name">[JB 워크샵] AX 활용 방안 수립</div>
+        <div class="mod-score">4.72</div>
         <div class="mod-stages">
           <span class="mod-stage"><span class="tag s1">1차</span><b>4.73</b></span>
-          <span class="mod-stage pending"><span class="tag s2">2차</span><b>입력 대기</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.70</b></span>
         </div>
       </div>
     </div>
-    <p style="font-size: 14px;color:var(--lge-muted);margin-top:12px;text-align:right">* M5(Copilot) · M6(JB 워크샵) 2차 점수는 추후 입력 예정</p>
+    
   </div>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════ TAB 2B (피드백) ═══ -->
+<div id="tab2b" class="tab-panel">
+<div class="container">
 
   <!-- 교육생 피드백 -->
-  <div class="section-gap"></div>
   <div class="section-num">
     <div class="num">3</div>
-    <h2>교육생 피드백 (VOE)<small>Learner Feedback — 2차 모듈별 정리</small></h2>
+    <h2>교육생 피드백 (VOE)<small>Learner Feedback — 2차 설문 종합 정리</small></h2>
   </div>
 
+  <!-- 1. 과정 만족도 - 긍정 -->
   <div class="card">
     <div class="voe-header">
       <span class="voe-tag pos">POSITIVE VOE</span>
-      <span style="font-size: 16px;font-weight:600">모듈별 주요 긍정 의견</span>
-      <span class="voe-count">2차 기준 · 4개 모듈</span>
+      <span style="font-size: 16px;font-weight:600">과정 만족도 · 긍정 의견</span>
+      <span class="voe-count">2차 · 4개 영역</span>
     </div>
     <div class="theme-list">
       <div class="theme-item pos">
-        <div class="theme-title">M1 · AX 방향성 <span class="freq-badge">2차 4.66</span></div>
+        <div class="theme-title">교육 내용 및 구성 <span class="freq-badge">실무 활용</span></div>
         <div class="quote-list">
-          <div class="quote">회사의 AX 추진 방향과 필요성에 대해 명확하게 이해할 수 있었습니다.</div>
-          <div class="quote">AX 전환이 왜 필요한지에 대해 공감할 수 있었고, 업무 적용 가능성을 인지할 수 있었습니다.</div>
-          <div class="quote">임원진이 직접 설명하여 신뢰도가 높았고, 전사 방향성에 대한 이해가 높아졌습니다.</div>
-          <div class="quote">향후 AI 활용 방향과 개인이 준비해야 할 부분에 대해 고민해볼 수 있는 계기가 되었습니다.</div>
+          <div class="quote">실무에 바로 적용할 수 있는 AI/코파일럿 중심 교육이라 유용했습니다.</div>
+          <div class="quote">다양한 AI Tool의 활용 방법과 적용 사례를 배울 수 있어 좋았습니다.</div>
+          <div class="quote">엑셀, 파워포인트, 이메일 등 실제 업무 툴과 연계된 점이 효과적이었습니다.</div>
+          <div class="quote">AI 활용 범위가 생각보다 넓다는 것을 알게 되었고, 기존에 모르던 기능들을 알게 되어 활용도가 높아질 것으로 기대됩니다.</div>
         </div>
       </div>
       <div class="theme-item pos">
-        <div class="theme-title">M2 · 엘지니 <span class="freq-badge">2차 4.56</span></div>
+        <div class="theme-title">실습 및 참여 방식 <span class="freq-badge">몰입도 ↑</span></div>
         <div class="quote-list">
-          <div class="quote">사내 AI 툴에 대해 이해할 수 있었고, 업무에 활용 가능성을 확인할 수 있었습니다.</div>
-          <div class="quote">기존에 알지 못했던 기능들을 새롭게 알게 되어 활용 범위가 확장되었습니다.</div>
-          <div class="quote">실습을 통해 기능을 직접 사용해보며 이해도를 높일 수 있었습니다.</div>
-          <div class="quote">사내 시스템과 연계된 활용 측면에서 접근성이 높다고 느꼈습니다.</div>
+          <div class="quote">실습 위주의 교육으로 이해가 쉽고 몰입도가 높았습니다.</div>
+          <div class="quote">직접 Tool을 활용해 결과물을 만들어보는 과정이 유익했습니다.</div>
+          <div class="quote">에이전트 제작 및 프로토타입 실습이 특히 인상적이었습니다.</div>
+          <div class="quote">팀별 활동과 아이디어 공유 과정이 도움이 되었고, 배운 내용을 바로 적용해볼 수 있어 학습 효과가 높았습니다.</div>
         </div>
       </div>
       <div class="theme-item pos">
-        <div class="theme-title">M3 · 엑사원 <span class="freq-badge">2차 4.54</span></div>
+        <div class="theme-title">강사 및 강의 방식 <span class="freq-badge">전달력 호평</span></div>
         <div class="quote-list">
-          <div class="quote">엑사원의 다양한 기능과 가능성에 대해 이해할 수 있었습니다.</div>
-          <div class="quote">국산 AI 모델에 대한 기대감이 높아졌으며, 성능이 예상보다 우수하다고 느꼈습니다.</div>
-          <div class="quote">글로벌 AI 모델과 비교해도 경쟁력이 있다고 판단되었습니다.</div>
-          <div class="quote">새로운 기능과 활용 방안을 접할 수 있어 유익했습니다.</div>
+          <div class="quote">강사의 전달력이 좋아 이해가 쉬웠고, 실무 중심의 설명으로 체감도가 높았습니다.</div>
+          <div class="quote">사례 기반 설명이 효과적이었습니다.</div>
         </div>
       </div>
       <div class="theme-item pos">
-        <div class="theme-title">M4 · 제미나이 <span class="freq-badge">2차 4.74 · 최고점</span></div>
+        <div class="theme-title">교육 경험 및 인식 변화 <span class="freq-badge">긍정 변화</span></div>
         <div class="quote-list">
-          <div class="quote">다양한 기능(Gems, NotebookLM, AI Studio 등)을 직접 실습하며 활용 방법을 익힐 수 있었습니다.</div>
-          <div class="quote">실습 중심 교육으로 실제 업무에 바로 적용할 수 있을 것이라는 확신이 들었습니다.</div>
-          <div class="quote">기존에 알지 못했던 기능들을 경험하며 활용 범위를 확장할 수 있었습니다.</div>
-          <div class="quote">데이터 정리, 문서 작성, 자동화 등에서 높은 효율성을 체감할 수 있었습니다.</div>
+          <div class="quote">AI를 업무에 적극 활용해야겠다는 인식이 생겼습니다.</div>
+          <div class="quote">AI에 대한 막연한 두려움이 줄어들었고, 실무 적용 가능성에 대한 자신감이 생겼습니다.</div>
+          <div class="quote">다양한 조직 구성원들과 아이디어를 나눌 수 있어 의미 있었습니다.</div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- 2. 과정 만족도 - 개선 -->
   <div class="card">
     <div class="voe-header">
       <span class="voe-tag neg">IMPROVE VOE</span>
-      <span style="font-size: 16px;font-weight:600">모듈별 주요 개선 의견</span>
-      <span class="voe-count">2차 기준 · 4개 모듈</span>
+      <span style="font-size: 16px;font-weight:600">과정 만족도 · 개선 의견</span>
+      <span class="voe-count">2차 · 5개 영역</span>
     </div>
     <div class="theme-list">
       <div class="theme-item neg">
-        <div class="theme-title">M1 · AX 방향성 <span class="freq-badge">개선 요청</span></div>
+        <div class="theme-title">교육 시간 및 일정 <span class="freq-badge">최다 반복</span></div>
         <div class="quote-list">
-          <div class="quote">방향성에 대한 설명은 있었으나, 실제 업무에 어떻게 적용할지에 대한 구체적인 방법이 부족했습니다.</div>
-          <div class="quote">교육 시간이 짧아 내용을 충분히 이해하고 소화하기 어려웠습니다.</div>
-          <div class="quote">직무별 또는 조직별로 적용 가능한 구체적인 사례가 부족했습니다.</div>
-          <div class="quote">개념 설명 위주로 진행되어 실질적으로 체감되는 부분이 다소 부족했습니다.</div>
+          <div class="quote">전체 교육 시간이 다소 짧아 아쉬움이 있었고, 각 Tool을 충분히 다루기에는 시간이 부족했습니다.</div>
+          <div class="quote">교육 기간을 2박 3일 등으로 확대할 필요가 있습니다.</div>
+          <div class="quote">실습 및 과제 수행 시간이 다소 촉박했고, 진행 속도가 전반적으로 빠르게 느껴졌습니다.</div>
         </div>
       </div>
       <div class="theme-item neg">
-        <div class="theme-title">M2 · 엘지니 <span class="freq-badge">개선 요청</span></div>
+        <div class="theme-title">교육 내용 심화 및 구성 <span class="freq-badge">심화 요구</span></div>
         <div class="quote-list">
-          <div class="quote">타 AI 툴 대비 차별화된 강점이 명확하게 느껴지지 않았습니다.</div>
-          <div class="quote">일부 기능 제한 및 완성도가 부족하다고 느껴졌습니다.</div>
-          <div class="quote">실제 업무 환경과 동일한 조건에서 실습이 이루어지지 않아 활용성 판단이 어려웠습니다.</div>
-          <div class="quote">시스템 오류 및 접속 문제로 인해 실습 진행이 원활하지 않은 경우가 있었습니다.</div>
+          <div class="quote">각 Tool을 폭넓게 다루기보다 심화 중심 교육이 필요합니다.</div>
+          <div class="quote">특정 Tool(특히 코파일럿)에 대해 보다 깊이 있는 학습이 필요합니다.</div>
+          <div class="quote">구체적인 활용 사례와 실무 적용 중심의 교육이 보완될 필요가 있고, 이론보다 실습 비중을 확대할 필요가 있습니다.</div>
         </div>
       </div>
       <div class="theme-item neg">
-        <div class="theme-title">M3 · 엑사원 <span class="freq-badge">개선 요청</span></div>
+        <div class="theme-title">실습 환경 및 운영 <span class="freq-badge">인프라 이슈</span></div>
         <div class="quote-list">
-          <div class="quote">실습 기회가 부족하여 기능을 충분히 체험하기 어려웠습니다.</div>
-          <div class="quote">실제 업무에 어떻게 활용할 수 있는지에 대한 설명이 부족했습니다.</div>
-          <div class="quote">타 AI 툴 대비 어떤 상황에서 사용하는 것이 적합한지 명확하지 않았습니다.</div>
-          <div class="quote">차별화된 강점에 대한 설명이 부족하여 활용 필요성이 명확하게 전달되지 않았습니다.</div>
+          <div class="quote">실습 시간이 전반적으로 부족했고, 팀 중심 실습 외에 개인 실습 기회 확대가 필요합니다.</div>
+          <div class="quote">크레딧 부족, 계정 및 권한 제한 등으로 실습에 제약이 있었습니다.</div>
+          <div class="quote">협업 및 피드백 구조에 대한 보완이 필요합니다.</div>
         </div>
       </div>
       <div class="theme-item neg">
-        <div class="theme-title">M4 · 제미나이 <span class="freq-badge">개선 요청</span></div>
+        <div class="theme-title">교육 대상 및 적용성 <span class="freq-badge">맞춤화 요구</span></div>
         <div class="quote-list">
-          <div class="quote">사내 보안 및 환경 제약으로 인해 실제 업무에서 활용이 어려운 점이 아쉬웠습니다.</div>
-          <div class="quote">Office, Outlook, Teams 등 기존 업무 도구와의 연동이 제한적이었습니다.</div>
-          <div class="quote">계정 권한 및 네트워크 문제로 일부 기능을 실습하지 못했습니다.</div>
-          <div class="quote">실제 업무 환경에서 사용할 수 있는 범위에 대한 안내가 부족했습니다.</div>
+          <div class="quote">사내에서 활용이 어려운 Tool은 제외하거나 보완이 필요합니다.</div>
+          <div class="quote">조직 및 직무별 맞춤형 사례가 다소 부족했습니다.</div>
+          <div class="quote">실제 현업 적용까지 이어지는 구체적인 가이드가 필요합니다.</div>
+        </div>
+      </div>
+      <div class="theme-item neg">
+        <div class="theme-title">교육 운영 및 환경 <span class="freq-badge">운영 보완</span></div>
+        <div class="quote-list">
+          <div class="quote">교육 장소 이동에 대한 부담 완화가 필요합니다.</div>
+          <div class="quote">쉬는 시간 및 전체 일정 운영에 대한 개선이 필요하고, 강사별 역량 차이에 따라 만족도 편차가 발생했습니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 모듈별 만족도 - 긍정 -->
+  <div class="card">
+    <div class="voe-header">
+      <span class="voe-tag pos">POSITIVE VOE</span>
+      <span style="font-size: 16px;font-weight:600">모듈별 · 긍정 의견</span>
+      <span class="voe-count">2차 · 6개 모듈</span>
+    </div>
+    <div class="theme-list">
+      <div class="theme-item pos">
+        <div class="theme-title">M1 · 자사 AX 추진 전략 및 방향 <span class="freq-badge">2차 4.64</span></div>
+        <div class="quote-list">
+          <div class="quote">AX의 필요성과 중요성을 명확히 인식할 수 있었습니다.</div>
+          <div class="quote">AI를 업무에 적용해야 한다는 방향성을 이해하는 데 도움이 되었습니다.</div>
+          <div class="quote">AX 시대에 필요한 기본 개념을 정리할 수 있었습니다.</div>
+        </div>
+      </div>
+      <div class="theme-item pos">
+        <div class="theme-title">M2 · 자사 AI Tool_Lgenie <span class="freq-badge">2차 4.52</span></div>
+        <div class="quote-list">
+          <div class="quote">사내 AI Tool에 대한 이해도를 높일 수 있었습니다.</div>
+          <div class="quote">내부 환경에서 활용 가능한 AI에 대한 인사이트를 얻을 수 있었습니다.</div>
+          <div class="quote">실제 적용 가능성을 고민해볼 수 있었습니다.</div>
+        </div>
+      </div>
+      <div class="theme-item pos">
+        <div class="theme-title">M3 · 자사 AI Tool_EXAONE <span class="freq-badge">2차 4.49</span></div>
+        <div class="quote-list">
+          <div class="quote">사내 AI 활용 방향과 기능에 대해 이해할 수 있었습니다.</div>
+          <div class="quote">실제 업무 적용 가능성에 대한 인사이트를 얻을 수 있었습니다.</div>
+        </div>
+      </div>
+      <div class="theme-item pos">
+        <div class="theme-title">M4 · Gemini 활용 및 실습 <span class="freq-badge">2차 4.69</span></div>
+        <div class="quote-list">
+          <div class="quote">다양한 생성형 AI Tool을 경험할 수 있어 유익했습니다.</div>
+          <div class="quote">AI 활용 범위를 확장하는 데 도움이 되었고, 새로운 Tool을 접하며 아이디어를 넓힐 수 있었습니다.</div>
+        </div>
+      </div>
+      <div class="theme-item pos">
+        <div class="theme-title">M5 · Copilot 활용 및 실습 <span class="freq-badge">2차 4.75 · 최고점</span></div>
+        <div class="quote-list">
+          <div class="quote">실무와 밀접한 Tool로서 활용도가 높다고 느꼈습니다.</div>
+          <div class="quote">엑셀, 파워포인트, 아웃룩 등과의 연계 활용이 유용했습니다.</div>
+          <div class="quote">기존에 사용하던 기능 외 다양한 활용 방법을 배울 수 있었고, 업무 생산성 향상에 대한 기대감이 형성되었습니다.</div>
+        </div>
+      </div>
+      <div class="theme-item pos">
+        <div class="theme-title">M6 · [JB 워크샵] AX 활용 방안 수립 <span class="freq-badge">2차 4.70</span></div>
+        <div class="quote-list">
+          <div class="quote">팀별 활동을 통해 아이디어를 구체화할 수 있어 유익했습니다.</div>
+          <div class="quote">에이전트 제작 및 프로토타입 경험이 의미 있었고, 다양한 관점과 아이디어를 공유할 수 있었습니다.</div>
+          <div class="quote">협업을 통한 문제 해결 경험이 도움이 되었습니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 모듈별 만족도 - 개선 -->
+  <div class="card">
+    <div class="voe-header">
+      <span class="voe-tag neg">IMPROVE VOE</span>
+      <span style="font-size: 16px;font-weight:600">모듈별 · 개선 의견</span>
+      <span class="voe-count">2차 · 6개 모듈</span>
+    </div>
+    <div class="theme-list">
+      <div class="theme-item neg">
+        <div class="theme-title">M1 · 자사 AX 추진 전략 및 방향 <span class="freq-badge">개선 요청</span></div>
+        <div class="quote-list">
+          <div class="quote">개념 설명 대비 실제 활용 방법 제시가 다소 부족했습니다.</div>
+          <div class="quote">방향성 제시뿐 아니라 구체적인 실행 방법 중심 교육이 필요합니다.</div>
+        </div>
+      </div>
+      <div class="theme-item neg">
+        <div class="theme-title">M2 · 자사 AI Tool_Lgenie <span class="freq-badge">개선 요청</span></div>
+        <div class="quote-list">
+          <div class="quote">기능 및 활용 사례에 대한 설명이 다소 부족했습니다.</div>
+          <div class="quote">실습 및 적용 경험을 보완할 필요가 있습니다.</div>
+        </div>
+      </div>
+      <div class="theme-item neg">
+        <div class="theme-title">M3 · 자사 AI Tool_EXAONE <span class="freq-badge">개선 요청</span></div>
+        <div class="quote-list">
+          <div class="quote">기능 이해 및 활용 사례 전달이 충분하지 않았습니다.</div>
+          <div class="quote">실습 기회 확대가 필요합니다.</div>
+        </div>
+      </div>
+      <div class="theme-item neg">
+        <div class="theme-title">M4 · Gemini 활용 및 실습 <span class="freq-badge">보안 이슈</span></div>
+        <div class="quote-list">
+          <div class="quote">사내 사용이 제한되어 실효성이 낮았고, 보안 및 라이선스 문제로 실습에 제약이 있었습니다.</div>
+          <div class="quote">실제 업무 적용이 어려운 부분이 있었습니다.</div>
+        </div>
+      </div>
+      <div class="theme-item neg">
+        <div class="theme-title">M5 · Copilot 활용 및 실습 <span class="freq-badge">시간 부족</span></div>
+        <div class="quote-list">
+          <div class="quote">핵심 Tool임에도 교육 시간이 부족했고, 기능을 깊이 있게 다루지 못한 점이 아쉬웠습니다.</div>
+          <div class="quote">일부 기능은 사내 권한 제한으로 활용이 어려웠습니다.</div>
+        </div>
+      </div>
+      <div class="theme-item neg">
+        <div class="theme-title">M6 · [JB 워크샵] AX 활용 방안 수립 <span class="freq-badge">개선 요청</span></div>
+        <div class="quote-list">
+          <div class="quote">팀 중심 활동으로 개인 실습 기회가 부족했습니다.</div>
+          <div class="quote">과제 수행 시간이 부족해 완성도가 낮았고, 일부 참여자의 참여 기회가 제한되었습니다.</div>
+          <div class="quote">결과 공유 및 피드백 과정 보완이 필요합니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 추가 요청사항 -->
+  <div class="card">
+    <div class="voe-header">
+      <span class="voe-tag" style="background:#fef3c7;color:#92400e">REQUEST</span>
+      <span style="font-size: 16px;font-weight:600">향후 교육 추가 요청 사항</span>
+      <span class="voe-count">2차 · 3개 영역</span>
+    </div>
+    <div class="theme-list">
+      <div class="theme-item" style="border-color:#f59e0b;background:#fffbeb">
+        <div class="theme-title">심화 및 후속 과정 <span class="freq-badge" style="background:#fef3c7;color:#92400e">심화 요구</span></div>
+        <div class="quote-list">
+          <div class="quote">AI/AX 심화 과정 개설이 필요합니다.</div>
+          <div class="quote">코파일럿 심화 및 에이전트 제작 과정 확대가 필요합니다.</div>
+          <div class="quote">실제 프로젝트 기반 교육(해커톤, 워크숍 등) 운영이 필요합니다.</div>
+        </div>
+      </div>
+      <div class="theme-item" style="border-color:#f59e0b;background:#fffbeb">
+        <div class="theme-title">직무 및 역량 확장 <span class="freq-badge" style="background:#fef3c7;color:#92400e">맞춤형</span></div>
+        <div class="quote-list">
+          <div class="quote">직무별 맞춤형 AI 활용 교육이 필요합니다.</div>
+          <div class="quote">JB 역할 수행을 위한 소통 및 퍼실리테이션 교육 병행이 필요합니다.</div>
+        </div>
+      </div>
+      <div class="theme-item" style="border-color:#f59e0b;background:#fffbeb">
+        <div class="theme-title">기타 운영 <span class="freq-badge" style="background:#fef3c7;color:#92400e">운영 확대</span></div>
+        <div class="quote-list">
+          <div class="quote">전사 대상 확대 교육 및 정기 운영이 필요합니다.</div>
+          <div class="quote">AI 사용 권한 및 라이선스 확대가 필요합니다.</div>
         </div>
       </div>
     </div>
@@ -1181,20 +1353,10 @@
   <div class="card">
     <p class="sub-section-title">📹 하이라이트 영상</p>
     <div class="sketch-video">
-      <!-- ↓↓↓ 영상 URL이 준비되면 아래 video-placeholder를 iframe 또는 video 태그로 교체하세요 ↓↓↓
-        [YouTube 예시]
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-        [GitHub/MP4 예시]
-        <video controls preload="metadata">
-          <source src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/highlight.mp4" type="video/mp4">
-        </video>
-      -->
-      <div class="video-placeholder">
-        <div class="vp-icon">▶</div>
-        <div class="vp-title">교육 하이라이트 영상</div>
-        <div class="vp-sub">영상 URL이 준비되면 이 영역에 임베드됩니다</div>
-      </div>
+      <video controls preload="metadata" playsinline>
+        <source src="http://edxlearning.lge.com/vod/int/002/B002/2026/04/28/025e7375-8180-4947-a94e-7f29d13310b5.mp4" type="video/mp4">
+        영상을 재생할 수 없습니다. <a href="http://edxlearning.lge.com/vod/int/002/B002/2026/04/28/025e7375-8180-4947-a94e-7f29d13310b5.mp4" target="_blank" rel="noopener noreferrer" style="color:#fff">여기를 클릭하여 직접 열기</a>
+      </video>
     </div>
   </div>
 
