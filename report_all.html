@@ -420,6 +420,8 @@
   }
   .mod-stage .tag.s1 { background: #fee2e2; color: var(--lge-red); }
   .mod-stage .tag.s2 { background: #dbeafe; color: #1d4ed8; }
+  .mod-stage.pending b { color: var(--lge-muted); font-weight: 500; }
+  .mod-stage.pending .tag.s2 { background: #f3f4f6; color: var(--lge-muted); }
 
   /* ── VOE ── */
   .voe-header {
@@ -504,6 +506,214 @@
   }
   .sketch-note strong { display: block; font-size: 18px; color: var(--lge-text); margin-bottom: 8px; }
 
+  /* ── VIDEO EMBED ── */
+  .sketch-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+  .sketch-video iframe,
+  .sketch-video video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .video-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    padding: 24px;
+  }
+  .video-placeholder .vp-icon {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+  .video-placeholder .vp-title {
+    font-size: 18px; font-weight: 700; color: white;
+  }
+  .video-placeholder .vp-sub {
+    font-size: 14px; color: rgba(255,255,255,0.55);
+  }
+  .sub-section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--lge-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 14px 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sub-section-title::before {
+    content: '';
+    width: 4px; height: 14px;
+    background: var(--lge-red);
+    border-radius: 2px;
+  }
+
+  /* ── CAROUSEL ── */
+  .carousel {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f0c29;
+  }
+  .carousel-track-wrap {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #000;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+  }
+  .carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    position: relative;
+  }
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .slide-top {
+    position: absolute;
+    top: 20px; left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 26px;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    color: white;
+    z-index: 1;
+    pointer-events: none;
+    text-align: center;
+    max-width: 80%;
+  }
+  .st-eyebrow {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: white;
+    background: var(--lge-red);
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+  }
+  .st-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.4;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    max-width: 100%;
+    word-break: keep-all;
+  }
+  @media (max-width: 640px) {
+    .slide-top { top: 14px; padding: 12px 18px; max-width: 86%; }
+    .st-eyebrow { font-size: 10px; padding: 3px 10px; margin-bottom: 8px; }
+    .st-title { font-size: 15px; }
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    border: none;
+    color: var(--lge-text);
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    transition: background 0.2s, transform 0.2s;
+    z-index: 2;
+  }
+  .carousel-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.05);
+  }
+  .carousel-btn.prev { left: 14px; }
+  .carousel-btn.next { right: 14px; }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 12px 16px;
+    background: rgba(0,0,0,0.55);
+    flex-wrap: wrap;
+  }
+  .carousel-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s, width 0.2s;
+  }
+  .carousel-dot.active {
+    background: white;
+    width: 22px;
+    border-radius: 100px;
+  }
+  .carousel-counter {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 100px;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+  }
+  @media (max-width: 640px) {
+    .carousel-btn { width: 38px; height: 38px; font-size: 17px; }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+    .carousel-track-wrap { aspect-ratio: 4 / 3; }
+  }
+
   /* ── FOOTER ── */
   .footer {
     text-align: center; padding: 28px; color: var(--lge-muted); font-size: 15px;
@@ -581,7 +791,10 @@
       <span class="tab-num">2</span> 설문 결과 &amp; 피드백
     </button>
     <button class="tab-btn" data-tab="tab3">
-      <span class="tab-num">3</span> 실습 결과물 &amp; 스케치
+      <span class="tab-num">3</span> 실습 결과물
+    </button>
+    <button class="tab-btn" data-tab="tab4">
+      <span class="tab-num">4</span> 현장 스케치
     </button>
   </nav>
 </div>
@@ -711,68 +924,85 @@
       </div>
     </div>
     <div class="divider"></div>
-    <p style="font-size: 14px;font-weight:700;color:var(--lge-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">반별 상세 (1차 + 2차)</p>
+    <p style="font-size: 14px;font-weight:700;color:var(--lge-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">반별 상세 — 1차 (종합 만족도)</p>
     <table class="class-table">
       <thead>
         <tr><th style="text-align:left">구분</th><th>전체 만족도</th><th>업무 관련성</th><th>학습 방법</th><th>실무 적용도</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="c1">1반</span> <span style="font-size: 14px;color:var(--lge-muted)">(1차)</span></td><td>4.74</td><td>4.84</td><td>4.68</td><td>4.63</td></tr>
-        <tr><td><span class="c1">2반</span> <span style="font-size: 14px;color:var(--lge-muted)">(1차)</span></td><td>4.69</td><td>4.77</td><td>4.69</td><td>4.77</td></tr>
-        <tr><td><span class="c1">3반</span> <span style="font-size: 14px;color:var(--lge-muted)">(1차)</span></td><td>5.00</td><td>5.00</td><td>5.00</td><td>5.00</td></tr>
-        <tr><td><span class="c1">4반</span> <span style="font-size: 14px;color:var(--lge-muted)">(1차)</span></td><td>4.76</td><td>4.59</td><td>4.76</td><td>4.59</td></tr>
-        <tr><td><span class="c1">5반</span> <span style="font-size: 14px;color:var(--lge-muted)">(1차)</span></td><td>4.93</td><td>4.71</td><td>4.79</td><td>4.79</td></tr>
-        <tr><td>전체 평균 (1+2차)</td><td>4.80</td><td>4.76</td><td>4.77</td><td>4.74</td></tr>
+        <tr><td><span class="c1">1반</span></td><td>4.74</td><td>4.84</td><td>4.68</td><td>4.63</td></tr>
+        <tr><td><span class="c1">2반</span></td><td>4.69</td><td>4.77</td><td>4.69</td><td>4.77</td></tr>
+        <tr><td><span class="c1">3반</span></td><td>5.00</td><td>5.00</td><td>5.00</td><td>5.00</td></tr>
+        <tr><td><span class="c1">4반</span></td><td>4.76</td><td>4.59</td><td>4.76</td><td>4.59</td></tr>
+        <tr><td><span class="c1">5반</span></td><td>4.93</td><td>4.71</td><td>4.79</td><td>4.79</td></tr>
+        <tr><td>1차 평균</td><td>4.82</td><td>4.78</td><td>4.78</td><td>4.75</td></tr>
       </tbody>
     </table>
+
+    <div style="height:24px"></div>
+    <p style="font-size: 14px;font-weight:700;color:var(--lge-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">반별 상세 — 2차 (모듈별 만족도)</p>
+    <table class="class-table">
+      <thead>
+        <tr><th style="text-align:left">구분</th><th>AX 방향성</th><th>엘지니</th><th>엑사원</th><th>제미나이</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="c2">1반</span> <span style="font-size: 14px;color:var(--lge-muted)">(201호)</span></td><td>4.84</td><td>4.89</td><td>4.79</td><td>4.95</td></tr>
+        <tr><td><span class="c2">2반</span> <span style="font-size: 14px;color:var(--lge-muted)">(205호)</span></td><td>4.77</td><td>4.77</td><td>4.59</td><td>4.86</td></tr>
+        <tr><td><span class="c2">3반</span> <span style="font-size: 14px;color:var(--lge-muted)">(301호)</span></td><td>4.88</td><td>4.63</td><td>4.75</td><td>4.88</td></tr>
+        <tr><td><span class="c2">4반</span> <span style="font-size: 14px;color:var(--lge-muted)">(302호)</span></td><td>4.47</td><td>4.44</td><td>4.34</td><td>4.75</td></tr>
+        <tr><td><span class="c2">5반</span> <span style="font-size: 14px;color:var(--lge-muted)">(303호)</span></td><td>4.40</td><td>4.15</td><td>4.30</td><td>4.25</td></tr>
+        <tr><td>2차 평균</td><td>4.66</td><td>4.56</td><td>4.54</td><td>4.74</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 14px;color:var(--lge-muted);margin-top:12px;text-align:right">* 2차 종합 만족도 · Copilot · JB 워크샵 점수는 추후 입력 예정</p>
   </div>
 
   <div class="card">
-    <p style="font-size: 14px;font-weight:700;color:var(--lge-muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em">세부 모듈별 평가 (1+2차 통합 평균)</p>
+    <p style="font-size: 14px;font-weight:700;color:var(--lge-muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em">세부 모듈별 평가</p>
     <div class="module-grid">
       <div class="mod-item">
         <div class="mod-label">M1</div>
-        <div class="mod-name">AX 전략</div>
-        <div class="mod-score">4.62</div>
+        <div class="mod-name">AX 방향성</div>
+        <div class="mod-score">4.64</div>
         <div class="mod-stages">
-          <span class="mod-stage"><span class="tag s1">1차</span><b>4.65</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.60</b></span>
+          <span class="mod-stage"><span class="tag s1">1차</span><b>4.62</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.66</b></span>
         </div>
       </div>
       <div class="mod-item">
         <div class="mod-label">M2</div>
-        <div class="mod-name">LGenie</div>
-        <div class="mod-score">4.53</div>
+        <div class="mod-name">엘지니</div>
+        <div class="mod-score">4.55</div>
         <div class="mod-stages">
-          <span class="mod-stage"><span class="tag s1">1차</span><b>4.55</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.52</b></span>
+          <span class="mod-stage"><span class="tag s1">1차</span><b>4.53</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.56</b></span>
         </div>
       </div>
       <div class="mod-item">
         <div class="mod-label">M3</div>
-        <div class="mod-name">EXAONE</div>
-        <div class="mod-score">4.51</div>
+        <div class="mod-name">엑사원</div>
+        <div class="mod-score">4.53</div>
         <div class="mod-stages">
-          <span class="mod-stage"><span class="tag s1">1차</span><b>4.52</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.50</b></span>
+          <span class="mod-stage"><span class="tag s1">1차</span><b>4.51</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.54</b></span>
         </div>
       </div>
       <div class="mod-item">
         <div class="mod-label">M4</div>
-        <div class="mod-name">Gemini</div>
-        <div class="mod-score">4.53</div>
+        <div class="mod-name">제미나이</div>
+        <div class="mod-score">4.64</div>
         <div class="mod-stages">
-          <span class="mod-stage"><span class="tag s1">1차</span><b>4.55</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.52</b></span>
+          <span class="mod-stage"><span class="tag s1">1차</span><b>4.53</b></span>
+          <span class="mod-stage"><span class="tag s2">2차</span><b>4.74</b></span>
         </div>
       </div>
-      <div class="mod-item best">
+      <div class="mod-item">
         <div class="mod-label">M5</div>
         <div class="mod-name">Copilot</div>
-        <div class="mod-score high">4.81</div>
+        <div class="mod-score">4.81</div>
         <div class="mod-stages">
-          <span class="mod-stage"><span class="tag s1">1차</span><b>4.85</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.78</b></span>
+          <span class="mod-stage"><span class="tag s1">1차</span><b>4.81</b></span>
+          <span class="mod-stage pending"><span class="tag s2">2차</span><b>입력 대기</b></span>
         </div>
       </div>
       <div class="mod-item">
@@ -780,65 +1010,62 @@
         <div class="mod-name">JB 워크샵</div>
         <div class="mod-score">4.73</div>
         <div class="mod-stages">
-          <span class="mod-stage"><span class="tag s1">1차</span><b>4.75</b></span>
-          <span class="mod-stage"><span class="tag s2">2차</span><b>4.72</b></span>
+          <span class="mod-stage"><span class="tag s1">1차</span><b>4.73</b></span>
+          <span class="mod-stage pending"><span class="tag s2">2차</span><b>입력 대기</b></span>
         </div>
       </div>
     </div>
-    <p style="font-size: 14px;color:var(--lge-muted);margin-top:12px;text-align:right">* 2차 데이터 임시 반영 — 실제 데이터 입력 후 수정 필요</p>
+    <p style="font-size: 14px;color:var(--lge-muted);margin-top:12px;text-align:right">* M5(Copilot) · M6(JB 워크샵) 2차 점수는 추후 입력 예정</p>
   </div>
 
   <!-- 교육생 피드백 -->
   <div class="section-gap"></div>
   <div class="section-num">
     <div class="num">3</div>
-    <h2>교육생 피드백 (VOE)<small>Learner Feedback — 1+2차 통합</small></h2>
+    <h2>교육생 피드백 (VOE)<small>Learner Feedback — 2차 모듈별 정리</small></h2>
   </div>
 
   <div class="card">
     <div class="voe-header">
       <span class="voe-tag pos">POSITIVE VOE</span>
-      <span style="font-size: 16px;font-weight:600">주요 긍정 테마</span>
-      <span class="voe-count">6개 테마</span>
+      <span style="font-size: 16px;font-weight:600">모듈별 주요 긍정 의견</span>
+      <span class="voe-count">2차 기준 · 4개 모듈</span>
     </div>
     <div class="theme-list">
       <div class="theme-item pos">
-        <div class="theme-title">전사 AX 방향성에 대한 이해 <span class="freq-badge">다수 언급</span></div>
+        <div class="theme-title">M1 · AX 방향성 <span class="freq-badge">2차 4.66</span></div>
         <div class="quote-list">
-          <div class="quote">막연하게 어렵다고만 느꼈던 AI와 AX를 초급부터 차근차근 실습으로 배울 수 있어, 전사 방향성과 경영진의 전략을 비로소 내 언어로 이해하게 됐습니다.</div>
-          <div class="quote">자사 AI 전략과 AX 추진 방향을 쉽게 설명해주셔서 '우리 회사가 어디로 가는지'를 명확히 잡을 수 있었습니다.</div>
+          <div class="quote">회사의 AX 추진 방향과 필요성에 대해 명확하게 이해할 수 있었습니다.</div>
+          <div class="quote">AX 전환이 왜 필요한지에 대해 공감할 수 있었고, 업무 적용 가능성을 인지할 수 있었습니다.</div>
+          <div class="quote">임원진이 직접 설명하여 신뢰도가 높았고, 전사 방향성에 대한 이해가 높아졌습니다.</div>
+          <div class="quote">향후 AI 활용 방향과 개인이 준비해야 할 부분에 대해 고민해볼 수 있는 계기가 되었습니다.</div>
         </div>
       </div>
       <div class="theme-item pos">
-        <div class="theme-title">자사 툴 (LGenie · EXAONE) 재발견 <span class="freq-badge">다수 언급</span></div>
+        <div class="theme-title">M2 · 엘지니 <span class="freq-badge">2차 4.56</span></div>
         <div class="quote-list">
-          <div class="quote">평소 무시하고 잘 쓰지 않던 LGenie가 생각보다 괜찮은 툴이라는 걸 알게 됐고, 개발자의 진심과 열정이 느껴져 '더 써봐야겠다'는 동기부여가 됐습니다.</div>
-          <div class="quote">사내 툴임에도 EXAONE 성능이 외부 주요 AI와 큰 차이가 없다는 걸 직접 확인했고, 업무 활용 가치가 충분하다고 느꼈습니다.</div>
+          <div class="quote">사내 AI 툴에 대해 이해할 수 있었고, 업무에 활용 가능성을 확인할 수 있었습니다.</div>
+          <div class="quote">기존에 알지 못했던 기능들을 새롭게 알게 되어 활용 범위가 확장되었습니다.</div>
+          <div class="quote">실습을 통해 기능을 직접 사용해보며 이해도를 높일 수 있었습니다.</div>
+          <div class="quote">사내 시스템과 연계된 활용 측면에서 접근성이 높다고 느꼈습니다.</div>
         </div>
       </div>
       <div class="theme-item pos">
-        <div class="theme-title">외부 AI 툴의 가능성 체험 <span class="freq-badge">주요 언급</span></div>
+        <div class="theme-title">M3 · 엑사원 <span class="freq-badge">2차 4.54</span></div>
         <div class="quote-list">
-          <div class="quote">AI Studio, NotebookLM, Gems 등 강력한 기능을 직접 만져보며 '생각보다 훨씬 많은 영역에 활용 가능하다'는 걸 체감했습니다.</div>
+          <div class="quote">엑사원의 다양한 기능과 가능성에 대해 이해할 수 있었습니다.</div>
+          <div class="quote">국산 AI 모델에 대한 기대감이 높아졌으며, 성능이 예상보다 우수하다고 느꼈습니다.</div>
+          <div class="quote">글로벌 AI 모델과 비교해도 경쟁력이 있다고 판단되었습니다.</div>
+          <div class="quote">새로운 기능과 활용 방안을 접할 수 있어 유익했습니다.</div>
         </div>
       </div>
       <div class="theme-item pos">
-        <div class="theme-title">Copilot의 즉시 적용 가능성 <span class="freq-badge">최다 호평</span></div>
+        <div class="theme-title">M4 · 제미나이 <span class="freq-badge">2차 4.74 · 최고점</span></div>
         <div class="quote-list">
-          <div class="quote">이번 교육 중 최고의 모듈이었습니다. PPT·Excel 등 평소 쓰던 M365 앱과 연동돼 현업에 바로 적용할 수 있었습니다.</div>
-          <div class="quote">자세한 설명과 반복 시연 덕에 학습이 쉬웠고, 심화 교육도 듣고 싶을 만큼 내용이 알찼습니다.</div>
-        </div>
-      </div>
-      <div class="theme-item pos">
-        <div class="theme-title">강의 품질과 강사 열정 <span class="freq-badge">다수 언급</span></div>
-        <div class="quote-list">
-          <div class="quote">엔트리 레벨도 이해할 수 있게 쉽게, 그리고 제한된 환경에서도 최선을 다해 안내해주신 강사님들의 노력이 크게 와닿았습니다.</div>
-        </div>
-      </div>
-      <div class="theme-item pos">
-        <div class="theme-title">워크샵 · 팀 협업 경험 <span class="freq-badge">주요 언급</span></div>
-        <div class="quote-list">
-          <div class="quote">JB들과 함께 AX 활용 방안을 논의하고 프로토타입·실제 결과물까지 직접 만들어본 경험이 가장 흥미로웠고 2일이 알차게 느껴졌습니다.</div>
+          <div class="quote">다양한 기능(Gems, NotebookLM, AI Studio 등)을 직접 실습하며 활용 방법을 익힐 수 있었습니다.</div>
+          <div class="quote">실습 중심 교육으로 실제 업무에 바로 적용할 수 있을 것이라는 확신이 들었습니다.</div>
+          <div class="quote">기존에 알지 못했던 기능들을 경험하며 활용 범위를 확장할 수 있었습니다.</div>
+          <div class="quote">데이터 정리, 문서 작성, 자동화 등에서 높은 효율성을 체감할 수 있었습니다.</div>
         </div>
       </div>
     </div>
@@ -847,27 +1074,44 @@
   <div class="card">
     <div class="voe-header">
       <span class="voe-tag neg">IMPROVE VOE</span>
-      <span style="font-size: 16px;font-weight:600">주요 개선 테마</span>
-      <span class="voe-count">3개 테마</span>
+      <span style="font-size: 16px;font-weight:600">모듈별 주요 개선 의견</span>
+      <span class="voe-count">2차 기준 · 4개 모듈</span>
     </div>
     <div class="theme-list">
       <div class="theme-item neg">
-        <div class="theme-title">보안 · 계정 인프라 문제 <span class="freq-badge">최다 반복</span></div>
+        <div class="theme-title">M1 · AX 방향성 <span class="freq-badge">개선 요청</span></div>
         <div class="quote-list">
-          <div class="quote">사내 보안과 계정 오류로 대부분의 실습이 불가능했습니다. 콘텐츠는 좋았지만 결국 '보고만 있는' 교육이 돼서 집중력이 떨어졌습니다.</div>
-          <div class="quote">보안팀과 협조해 실습 가능한 환경을 마련해주시고, 엔터프라이즈 계정 선제 보급과 Copilot 프리미엄 등 유료 기능 회사 차원의 제공이 필요합니다.</div>
+          <div class="quote">방향성에 대한 설명은 있었으나, 실제 업무에 어떻게 적용할지에 대한 구체적인 방법이 부족했습니다.</div>
+          <div class="quote">교육 시간이 짧아 내용을 충분히 이해하고 소화하기 어려웠습니다.</div>
+          <div class="quote">직무별 또는 조직별로 적용 가능한 구체적인 사례가 부족했습니다.</div>
+          <div class="quote">개념 설명 위주로 진행되어 실질적으로 체감되는 부분이 다소 부족했습니다.</div>
         </div>
       </div>
       <div class="theme-item neg">
-        <div class="theme-title">절대적인 교육 시간 부족 <span class="freq-badge">다수 언급</span></div>
+        <div class="theme-title">M2 · 엘지니 <span class="freq-badge">개선 요청</span></div>
         <div class="quote-list">
-          <div class="quote">3일 분량을 2일에 압축하다 보니 진행이 너무 빠르고 쉬는 시간조차 부족했습니다. 내용을 소화하기 어려웠습니다.</div>
+          <div class="quote">타 AI 툴 대비 차별화된 강점이 명확하게 느껴지지 않았습니다.</div>
+          <div class="quote">일부 기능 제한 및 완성도가 부족하다고 느껴졌습니다.</div>
+          <div class="quote">실제 업무 환경과 동일한 조건에서 실습이 이루어지지 않아 활용성 판단이 어려웠습니다.</div>
+          <div class="quote">시스템 오류 및 접속 문제로 인해 실습 진행이 원활하지 않은 경우가 있었습니다.</div>
         </div>
       </div>
       <div class="theme-item neg">
-        <div class="theme-title">'툴 소개' → '현업 시나리오' 축 이동 요구 <span class="freq-badge">주요 언급</span></div>
+        <div class="theme-title">M3 · 엑사원 <span class="freq-badge">개선 요청</span></div>
         <div class="quote-list">
-          <div class="quote">기능은 알게 됐지만 우리 일에 구체적으로 어떻게 쓸지가 잘 연결되지 않았습니다. 자사 툴 소개보다 실질 활용 방안 중심 구성이 필요합니다.</div>
+          <div class="quote">실습 기회가 부족하여 기능을 충분히 체험하기 어려웠습니다.</div>
+          <div class="quote">실제 업무에 어떻게 활용할 수 있는지에 대한 설명이 부족했습니다.</div>
+          <div class="quote">타 AI 툴 대비 어떤 상황에서 사용하는 것이 적합한지 명확하지 않았습니다.</div>
+          <div class="quote">차별화된 강점에 대한 설명이 부족하여 활용 필요성이 명확하게 전달되지 않았습니다.</div>
+        </div>
+      </div>
+      <div class="theme-item neg">
+        <div class="theme-title">M4 · 제미나이 <span class="freq-badge">개선 요청</span></div>
+        <div class="quote-list">
+          <div class="quote">사내 보안 및 환경 제약으로 인해 실제 업무에서 활용이 어려운 점이 아쉬웠습니다.</div>
+          <div class="quote">Office, Outlook, Teams 등 기존 업무 도구와의 연동이 제한적이었습니다.</div>
+          <div class="quote">계정 권한 및 네트워크 문제로 일부 기능을 실습하지 못했습니다.</div>
+          <div class="quote">실제 업무 환경에서 사용할 수 있는 범위에 대한 안내가 부족했습니다.</div>
         </div>
       </div>
     </div>
@@ -921,17 +1165,135 @@
     <p class="note" style="margin-top:14px">※ 2차수 결과물 링크는 추후 업데이트 예정입니다.</p>
   </div>
 
-  <div class="section-gap"></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════ TAB 4 ═══ -->
+<div id="tab4" class="tab-panel">
+<div class="container">
+
   <div class="section-num">
     <div class="num">5</div>
     <h2>현장 스케치<small>On-site Sketches</small></h2>
   </div>
 
+  <!-- 영상 -->
   <div class="card">
-    <div class="sketch-note">
-      <strong>📷 현장 스케치</strong>
-      1+2차 1박 2일 함께한 JB의 교육 현장 모습을 담아 보았습니다 ~<br><br>
-      <span style="font-size: 15px">이미지는 추후 업로드 예정 / 1차 스케치는 JB1stfinal.html 참고</span>
+    <p class="sub-section-title">📹 하이라이트 영상</p>
+    <div class="sketch-video">
+      <!-- ↓↓↓ 영상 URL이 준비되면 아래 video-placeholder를 iframe 또는 video 태그로 교체하세요 ↓↓↓
+        [YouTube 예시]
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        [GitHub/MP4 예시]
+        <video controls preload="metadata">
+          <source src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/highlight.mp4" type="video/mp4">
+        </video>
+      -->
+      <div class="video-placeholder">
+        <div class="vp-icon">▶</div>
+        <div class="vp-title">교육 하이라이트 영상</div>
+        <div class="vp-sub">영상 URL이 준비되면 이 영역에 임베드됩니다</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 사진 캐러셀 -->
+  <div class="card" style="padding: 0; overflow: hidden;">
+    <p class="sub-section-title" style="margin: 18px 0 12px 22px">📷 현장 포토 앨범</p>
+    <div class="carousel" id="sketchCarousel">
+      <div class="carousel-counter"><span id="carouselCurrent">1</span> / <span id="carouselTotal">12</span></div>
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/1.jpg" alt="환영사" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">WELCOME</span>
+              <div class="st-title">JB 여러분 환영합니다~!</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/2.jpg" alt="EXAONE 소개" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">LG전자 AI Tool</span>
+              <div class="st-title">EXAONE을 소개합니다.</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/3.jpg" alt="EXAONE 실습" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">SMILE</span>
+              <div class="st-title">EXAONE 실습하기</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/4.jpg" alt="실습 결과물 공유" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">RESULT</span>
+              <div class="st-title">실습 결과물 공유 게시판</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/5.jpg" alt="엑사원 실습 공유 채널" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">TEAMS</span>
+              <div class="st-title">엑사원 실습 공유 채널</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/6.jpg" alt="Gemini 새 기능" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">LEARN</span>
+              <div class="st-title">Gemini의 새로운 기능을 배우다</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/7.jpg" alt="Gemini 업무 활용" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">DO</span>
+              <div class="st-title">JB 업무를 Gemini로 해보기</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/8.jpg" alt="AI 첫걸음" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">NEW</span>
+              <div class="st-title">AI 첫걸음을 내딛다!</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/9.jpg" alt="함께 성장" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">GROWTH</span>
+              <div class="st-title">함께 성장하기</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/10.jpg" alt="JB 네트워킹" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">TOGETHER</span>
+              <div class="st-title">함께하는 JB 네트워킹 시간~!!</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/11.jpg" alt="JB AX Mini 워크샵" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">WORKSHOP</span>
+              <div class="st-title">본부별 JB AX Mini 워크샵</div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/LGEHQEX/LGE_JB_AX_26-2/main/12.jpg" alt="현업 적용 계획" loading="lazy">
+            <div class="slide-top">
+              <span class="st-eyebrow">OUTCOME</span>
+              <div class="st-title">JB Mini WS - AX 현업 적용 계획</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn prev" id="carouselPrev" aria-label="이전 사진">‹</button>
+      <button class="carousel-btn next" id="carouselNext" aria-label="다음 사진">›</button>
+      <div class="carousel-dots" id="carouselDots"></div>
     </div>
   </div>
 
@@ -958,6 +1320,67 @@
       window.scrollTo({ top: heroBottom, behavior: 'smooth' });
     });
   });
+
+  /* ── CAROUSEL ── */
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    if (!track) return;
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total = slides.length;
+    const dotsWrap = document.getElementById('carouselDots');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const currentEl = document.getElementById('carouselCurrent');
+    const totalEl = document.getElementById('carouselTotal');
+    let idx = 0;
+
+    totalEl.textContent = total;
+
+    // 도트 생성
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', (i + 1) + '번 사진으로 이동');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    }
+    const dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+    function goTo(n) {
+      idx = (n + total) % total;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      currentEl.textContent = idx + 1;
+    }
+
+    prevBtn.addEventListener('click', () => goTo(idx - 1));
+    nextBtn.addEventListener('click', () => goTo(idx + 1));
+
+    // 키보드 좌우 화살표
+    document.addEventListener('keydown', (e) => {
+      const carousel = document.getElementById('sketchCarousel');
+      const rect = carousel.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+      if (e.key === 'ArrowLeft') goTo(idx - 1);
+      if (e.key === 'ArrowRight') goTo(idx + 1);
+    });
+
+    // 터치 스와이프 (모바일)
+    let touchStartX = 0;
+    let touchEndX = 0;
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) goTo(idx + 1);
+        else goTo(idx - 1);
+      }
+    }, { passive: true });
+  })();
 </script>
 </body>
 </html>
